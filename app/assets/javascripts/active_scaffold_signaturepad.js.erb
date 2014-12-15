@@ -1,0 +1,34 @@
+//= require_tree ./jquery.signaturepad
+//= require_self
+
+ActiveScaffold.signaturepad = function(selector_or_elements, parent) {
+  var elements;
+  if (!jQuery.fn.signaturePad) return;
+  if (typeof(selector_or_elements) == 'string') elements = jQuery(selector_or_elements, parent);
+  else elements = jQuery(selector_or_elements);
+
+  var attributes = <%= ActiveScaffoldSignaturepad::ViewHelpers.json_attributes %>;
+  elements.each(function() {
+    var options = {}, $pad = $(this);
+    $.each(attributes, function(i, opt) {
+      var val = $pad.data(opt);
+      if (val != null) options[opt] = val;
+    });
+    if (!options.displayOnly) options.drawOnly = !$pad.data('type');
+    var api = $pad.signaturePad(options);
+    if (options.displayOnly) api.regenerate($pad.data('signature'));
+  });
+};
+
+jQuery(document).ready(function($) {
+  $(document).on('as:action_success', 'a.as_action', function(e, action_link) {
+    var pads = $('.sigPad', action_link.adapter);
+    if (pads.length) ActiveScaffold.signaturepad(pads);
+  });
+  $(document).on('as:element_updated', function(e) {
+    var pads = $('.sigPad', e.target);
+    if (pads.length) ActiveScaffold.signaturepad(pads);
+  });
+  var pads = $('.sigPad');
+  if (pads.length) ActiveScaffold.signaturepad(pads);
+});
