@@ -15,8 +15,9 @@ ActiveScaffold.signaturepad = function(selector_or_elements, parent) {
       if (val != null) options[opt] = val;
     });
     if (!options.displayOnly) options.drawOnly = !$pad.data('type');
-    var api = $pad.signaturePad(options);
+    var signature = $('input', $pad).val(), api = $pad.signaturePad(options);
     if (options.displayOnly) api.regenerate($pad.data('signature'));
+    else if (signature) api.regenerate(signature);
   });
 };
 
