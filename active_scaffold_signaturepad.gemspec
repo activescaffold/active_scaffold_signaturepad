@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
 
-  s.add_development_dependency(%q<shoulda>, [">= 0"])
   s.add_development_dependency(%q<bundler>, ["~> 1.0"])
   s.add_runtime_dependency(%q<active_scaffold>, [">= 3.4.0"])
 end
