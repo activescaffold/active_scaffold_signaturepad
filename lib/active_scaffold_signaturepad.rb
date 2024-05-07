@@ -6,6 +6,3 @@ module ActiveScaffoldSignaturepad
   end
   autoload 'ViewHelpers', 'active_scaffold_signaturepad/view_helpers.rb'
 end
-
-ActiveScaffold.stylesheets << 'active_scaffold_signaturepad'
-ActiveScaffold.javascripts << 'active_scaffold_signaturepad'
