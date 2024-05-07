@@ -5,12 +5,5 @@ module ActiveScaffoldSignaturepad
         include ActiveScaffoldSignaturepad::ViewHelpers
       end
     end
-
-    initializer "active_scaffold_signaturepad.assets" do
-      ActiveSupport.on_load :active_scaffold do
-        self.stylesheets << 'active_scaffold_signaturepad'
-        self.javascripts << 'active_scaffold_signaturepad'
-      end
-    end
   end
 end
