@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_scaffold_signaturepad (0.1.2)
+    active_scaffold_signaturepad (0.2.0)
       active_scaffold (>= 3.4.0)
 
 GEM
@@ -164,4 +164,4 @@ DEPENDENCIES
   bundler (~> 2.0)
 
 BUNDLED WITH
-   2.3.9
+   2.4.22
