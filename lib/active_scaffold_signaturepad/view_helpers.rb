@@ -2,8 +2,8 @@ module ActiveScaffoldSignaturepad
   module ViewHelpers
     ATTRIBUTES = [:line_colour, :line_width, :line_margin, :line_top, :bg_colour, :pen_colour, :pen_width, :pen_cap, :display_only, :error_message_draw]
     def signaturepad_attributes(column, ui_options: column.options)
-      attributes = ATTRIBUTES.map{ |attr| [attr, ui_options[attr]] if ui_options[attr] }
-      attributes = Hash[attributes].reverse_merge(:error_message_draw => :sign_document)
+      attributes = ATTRIBUTES.map{ |attr| [attr, ui_options[attr]] if ui_options[attr] }.compact.to_h
+      attributes.reverse_merge!(:error_message_draw => :sign_document)
       attributes[:type] = ui_options[:type] if ui_options[:type]
       attributes[:error_message_draw] = as_(attributes[:error_message_draw]) if attributes[:error_message_draw].is_a? Symbol
       attributes
