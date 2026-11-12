@@ -8,4 +8,6 @@ module ActiveScaffoldSignaturepad
 end
 
 ActiveScaffold.stylesheets << 'active_scaffold_signaturepad'
-ActiveScaffold.javascripts << 'active_scaffold_signaturepad'
+ActiveScaffold.javascripts.concat(
+  ['jquery.signaturepad/jquery.signaturepad', 'active_scaffold_signaturepad']
+)

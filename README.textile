@@ -1,6 +1,6 @@
 h1. Signaturepad for ActiveScaffold
 
-Currently, this plugin is compatible with ActiveScaffold >= 3.4 gem.
+This plugin is compatible with ActiveScaffold >= 3.4.
 
 h2. Overview
 
@@ -14,6 +14,11 @@ You'll need at least ActiveScaffold 3.4 to use this
 <pre>
 gem install active_scaffold_signaturepad
 </pre>
+
+The JavaScript assets are registered with ActiveScaffold and work with the
+supported Sprockets and Propshaft loading configurations, including Importmap.
+Follow ActiveScaffold's JavaScript loading instructions for the asset pipeline
+used by the application; no separate Signaturepad pin or script tag is needed.
 
 h2. Usage
 

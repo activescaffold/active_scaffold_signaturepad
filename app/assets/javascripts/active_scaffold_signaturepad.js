@@ -1,13 +1,21 @@
-//= require_tree ./jquery.signaturepad
-//= require_self
-
 ActiveScaffold.signaturepad = function(selector_or_elements, parent) {
   var elements;
   if (!jQuery.fn.signaturePad) return;
   if (typeof(selector_or_elements) == 'string') elements = jQuery(selector_or_elements, parent);
   else elements = jQuery(selector_or_elements);
 
-  var attributes = <%= ActiveScaffoldSignaturepad::ViewHelpers.json_attributes %>;
+  var attributes = [
+    'lineColour',
+    'lineWidth',
+    'lineMargin',
+    'lineTop',
+    'bgColour',
+    'penColour',
+    'penWidth',
+    'penCap',
+    'displayOnly',
+    'errorMessageDraw'
+  ];
   elements.each(function() {
     var options = {}, $pad = $(this);
     $.each(attributes, function(i, opt) {
