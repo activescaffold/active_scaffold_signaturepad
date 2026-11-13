@@ -1,16 +1,6 @@
-require 'minitest/autorun'
-require 'rails'
+# frozen_string_literal: true
 
-module ActiveScaffold
-  class << self
-    attr_accessor :javascripts, :stylesheets
-  end
-
-  self.javascripts = []
-  self.stylesheets = []
-end
-
-require 'active_scaffold_signaturepad'
+require 'test_helper'
 
 class AssetsTest < Minitest::Test
   def test_registers_plain_javascript_assets_in_dependency_order
@@ -30,7 +20,7 @@ class AssetsTest < Minitest::Test
     path = File.expand_path('../app/assets/javascripts/active_scaffold_signaturepad.js', __dir__)
     source = File.read(path)
 
-    refute_includes source, '<%'
-    refute_includes source, '//= require'
+    assert_equal false, source.include?('<%')
+    assert_equal false, source.include?('//= require')
   end
 end

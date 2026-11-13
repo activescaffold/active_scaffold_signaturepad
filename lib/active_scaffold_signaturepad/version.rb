@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveScaffoldSignaturepad
   module Version
     MAJOR = 0

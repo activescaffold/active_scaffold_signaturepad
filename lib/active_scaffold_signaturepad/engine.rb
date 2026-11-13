@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveScaffoldSignaturepad
   class Engine < ::Rails::Engine
     initializer 'active_scaffold_signaturepad.action_view' do
