@@ -7,6 +7,9 @@ source 'https://rubygems.org'
 
 gemspec
 
+gem 'simplecov', '~> 0.22.0', require: false
+gem 'simplecov_json_formatter', require: false
+
 group :lint do
   gem 'rubocop', '~> 1.86.0', require: false
   gem 'rubocop-erb', require: false
