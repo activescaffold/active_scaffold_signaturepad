@@ -1,5 +1,12 @@
 h1. Signaturepad for ActiveScaffold
 
+"!https://github.com/activescaffold/active_scaffold_signaturepad/actions/workflows/ci.yml/badge.svg(Build status)!":https://github.com/activescaffold/active_scaffold_signaturepad/actions/workflows/ci.yml
+"!https://qlty.sh/gh/activescaffold/projects/active_scaffold_signaturepad/maintainability.svg(Maintainability)!":https://qlty.sh/gh/activescaffold/projects/active_scaffold_signaturepad
+"!https://qlty.sh/gh/activescaffold/projects/active_scaffold_signaturepad/coverage.svg(Code Coverage)!":https://qlty.sh/gh/activescaffold/projects/active_scaffold_signaturepad
+"!https://badge.fury.io/rb/active_scaffold_signaturepad.svg(Gem Version)!":https://badge.fury.io/rb/active_scaffold_signaturepad
+"!https://inch-ci.org/github/activescaffold/active_scaffold_signaturepad.svg?branch=master(Inline docs)!":https://inch-ci.org/github/activescaffold/active_scaffold_signaturepad
+"!https://img.shields.io/badge/License-MIT-blue.svg(License: MIT)!":https://opensource.org/licenses/MIT
+
 This plugin is compatible with ActiveScaffold >= 3.4.
 
 h2. Overview
