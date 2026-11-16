@@ -73,4 +73,18 @@ class ViewHelpersTest < Minitest::Test
     assert_includes html, 'data-signature="[{&quot;lx&quot;:1,&quot;ly&quot;:2}]"'
     assert_includes html, '<canvas width="400" height="150"></canvas>'
   end
+
+  def test_root_points_to_the_gem_directory
+    assert_equal File.expand_path('..', __dir__), File.expand_path(ActiveScaffoldSignaturepad.root)
+  end
+
+  def test_engine_initializer_installs_view_helpers_on_action_view
+    initializer = ActiveScaffoldSignaturepad::Engine.initializers.find do |item|
+      item.name == 'active_scaffold_signaturepad.action_view'
+    end
+
+    initializer.run
+
+    assert_includes ActionView::Base.ancestors, ActiveScaffoldSignaturepad::ViewHelpers
+  end
 end
